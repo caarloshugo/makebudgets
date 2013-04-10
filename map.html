@@ -32,7 +32,16 @@
         google.visualization.events.addListener(chart, 'select', selectHandler);
 
 		function selectHandler(e) {
-			alert('A table row was selected');
+			var selection = chart.getSelection();
+			
+			for(var i = 0; i < selection.length; i++) {
+				var item = selection[i];
+				var str  = data.getFormattedValue(item.row, 1);
+				
+				//console.log(item.row);
+				alert(str);
+				console.log(str);
+			}
 		}
     };
     </script>
