@@ -1,5 +1,8 @@
 <html>
   <head>
+	<style>
+		#chart_div { cursor:pointer; }
+	</style>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
     <script type='text/javascript'>
      google.load('visualization', '1', {'packages': ['geochart']});
@@ -8,21 +11,31 @@
     function drawRegionsMap() {
 		var data = new google.visualization.DataTable();
 		
+		/*
+		1 - El salvador
+		2 - Fiji
+		3 - Vietnam
+		4 - Kyrgyz Republic
+		*/
+		
+		var url1 = "http://google.com";
+		var url2 = "http://twitter.com";
+		var url3 = "http://makebudgetspublic.org";
+		var url4 = "http://fundar.org.mx";
+		
 		data.addColumn('string', 'Country');
 		data.addColumn('number', 'Color');
-		
-		// A column for custom tooltip content
 		data.addColumn({type: 'string', role: 'tooltip'});
 		
 		data.addRows([
-			['El salvador', 1, 'Info'],
-			['Mexico', 2, 'Info'],
-			['Fiji',  3, 'Info'],
-			['Vietnam', 4, 'Info'],
-			['Kyrgyz Republic', 5, 'Info']
+			['El salvador', 1, 'click for more information'],
+			['Fiji',  2, 'click for more information'],
+			['Vietnam', 3, 'click for more information'],
+			['Kyrgyz Republic', 4, 'click for more information']
 		]);
-
+		
         var options = {
+			legend: 'none',
 			colorAxis: {colors: ['#b8282e', '#f48022', '#dac300', '#007a78', '#0065a4']}
 		};
 
@@ -38,9 +51,15 @@
 				var item = selection[i];
 				var str  = data.getFormattedValue(item.row, 1);
 				
-				//console.log(item.row);
-				alert(str);
-				console.log(str);
+				if(str==1) {
+					window.location = url1;
+				} else if(str==2) {
+					window.location = url2
+				} else if(str==3) {
+					window.location = url3;
+				} else if(str==4) {
+					window.location = url4;
+				} 
 			}
 		}
     };
