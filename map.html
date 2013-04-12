@@ -12,7 +12,7 @@
 		var data = new google.visualization.DataTable();
 		
 		/*
-		1 - El salvador
+		1 - El Salvador
 		2 - Fiji
 		3 - Vietnam
 		4 - Kyrgyz Republic
@@ -31,22 +31,39 @@
 		data.addColumn({type: 'string', role: 'tooltip'});
 		
 		data.addRows([
-			['El salvador', 1, 'click for more information'],
-			['Fiji',  2, 'click for more information'],
-			['Vietnam', 3, 'click for more information'],
-			['Kyrgyz Republic', 4, 'click for more information']
+			['El Salvador', 1, 'OBI 2012 Score: 43'],
+			['Fiji',  2, 'OBI 2012 Score: 6'],
+			['Vietnam', 3, 'OBI 2012 Score: 19'],
+			['Kyrgyz Republic', 4, 'OBI 2012 Score: 20']
 		]);
 		
         var options = {
 			legend: 'none',
+			allowHtml: true,
 			colorAxis: {colors: ['#b8282e', '#f48022', '#dac300', '#007a78', '#0065a4']}
 		};
 
         var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        google.visualization.events.addListener(chart, 'ready', onReady);
+        
+        /*
+        var formatter = new google.visualization.PatternFormat('\n\r\fhola\n\r\fhola <h2>hola</h2>');
+		formatter.format(data, [2, 2]);
+		*/
+		
         chart.draw(data, options);
         
         google.visualization.events.addListener(chart, 'select', selectHandler);
-
+        
+		
+		function onReady() {
+			
+		}
+  
+        function selectHandler2() {
+			alert("sa");
+		}
+		
 		function selectHandler(e) {
 			var selection = chart.getSelection();
 			
