@@ -32,19 +32,76 @@
 		data.addColumn('number', 'Color');
 		data.addColumn({type: 'string', role: 'tooltip'});
 		
+		/*
+		Azul #0066A3
+		Verde #007A77
+		Amarillo #DEC000
+		Naranja #FF791E
+		Rojo #C71D2F
+		*/
 		data.addRows([
-			['El Salvador', 1, 'OBI 2012 Score: 43'],
-			['Fiji',  2, 'OBI 2012 Score: 6'],
-			['Vietnam', 3, 'OBI 2012 Score: 19'],
-			['Kyrgyz ', 4, 'OBI 2012 Score: 20'],
-			['Senegal', 5, 'OBI 2012 Score: 10'],
-			['Egypt', 6, 'OBI 2012 Score: 3']
+			['United States', 1, 'OBI 2012 Score: 0'],
+			['Mexico', 2, 'OBI 2012 Score: 0'],
+			['Guatemala', 3, 'OBI 2012 Score: 51'],
+			['Honduras', 4, 'OBI 2012 Score: 53'],
+			['Nicaragua', 5, 'OBI 2012 Score: 42'],
+			['Costa rica', 6, 'OBI 2012 Score: 50'],
+			['Dominican Replublic', 7, 'OBI 2012 Score: 29'],
+			['Colombia', 8, 'OBI 2012 Score: 58'],
+			['Peru', 9, 'OBI 2012 Score: 57'],
+			['Argentina', 10, 'OBI 2012 Score: 50'],
+			['Ecuador', 11, 'OBI 2012 Score: 31'],
+			['Venezuela', 12, 'OBI 2012 Score: 37'],
+			['Brazil', 13, 'OBI 2012 Score: 73'],
+			['Chile', 14, 'OBI 2012 Score: 66'],
+			['Bolivia', 15, 'OBI 2012 Score: 12'],
+			['El Salvador', 16, 'OBI 2012 Score: 43'],
+			['Fiji', 17, 'OBI 2012 Score: 6'],
+			['Vietnam', 18, 'OBI 2012 Score: 19'],
+			['Kyrgyz Republic', 19, 'OBI 2012 Score: 20'],
+			['Senegal', 20, 'OBI 2012 Score: 10'],
+			['Egypt', 21, 'OBI 2012 Score: 3'],
+			['Namibia', 22, 'OBI 2012 Score: 0'],
+			['Botswana', 23, 'OBI 2012 Score: 0'],
+			['Mozambique', 24, 'OBI 2012 Score: 0'],
+			['Malawi', 25, 'OBI 2012 Score: 0'],
+			['Tanzania', 26, 'OBI 2012 Score: 0'],
+			['Kenya', 27, 'OBI 2012 Score: 0'],
+			['Ghana', 28, 'OBI 2012 Score: 0'],
+			['Liberia', 29, 'OBI 2012 Score: 0'],
+			['Mali', 30, 'OBI 2012 Score: 0'],
+			['Zimbabwe', 31, 'OBI 2012 Score: 0'],
+			['Zambia', 32, 'OBI 2012 Score: 0'],
+			['Democratic Republic of the Congo', 33, 'OBI 2012 Score: 0'],
+			['Rwanda', 34, 'OBI 2012 Score: 0'],
+			['Equatorial Guinea', 35, 'OBI 2012 Score: 0'],
+			['Cameroon', 36, 'OBI 2012 Score: 0'],
+			['Nigeria', 37, 'OBI 2012 Score: 0'],
+			['Chad', 38, 'OBI 2012 Score: 0'],
+			['Benin', 39, 'OBI 2012 Score: 0'],
+			['Niger', 40, 'OBI 2012 Score: 0'],
+			['Algeria', 41, 'OBI 2012 Score: 0'],
+			['Tunisia', 42, 'OBI 2012 Score: 0'],
+			['Angola', 43, 'OBI 2012 Score: 0'],
+			['Sierra Leone', 44, 'OBI 2012 Score: 0'],
+			['Burkina Faso', 45, 'OBI 2012 Score: 0'],
+			['Morocco', 46, 'OBI 2012 Score: 0'],
+			['South Africa', 47, 'OBI 2012 Score: 0'],
+			['Uganda', 48, 'OBI 2012 Score: 0'],
 		]);
 		
         var options = {
 			legend: 'none',
 			allowHtml: true,
-			colorAxis: {colors: ['#b8282e', '#f48022', '#dac300', '#007a78', '#0065a4']}
+			colorAxis: {minValue:1, maxValue:48, colors: [
+				'#007A77', '#007A77', '#DEC000', '#DEC000', '#DEC000', '#DEC000', '#FF791E', 
+				'#DEC000', '#DEC000', '#DEC000', '#FF791E', '#FF791E', '#007A77', '#007A77', 
+				'#C71D2F', '#DEC000', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F',
+				'#DEC000', '#DEC000', '#DEC000', '#DEC000', '#DEC000', '#DEC000', '#DEC000',
+				'#DEC000', '#DEC000', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F',
+				'#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F', '#C71D2F',
+				'#FF791E', '#FF791E', '#FF791E', '#FF791E', '#0066A3', '#007A77'
+			]}
 		};
 
         var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
