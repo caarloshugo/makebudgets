@@ -8,13 +8,13 @@
   <![endif]-->
   <style>
     body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:960px; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
   </style>
 </head>
 <body>
 <div id='map'></div>
 <script type='text/javascript'>
-var map = L.mapbox.map('map', 'caarloshugo.map-chfohwsn', { minZoom: 10, maxZoom:19, }).setView([19.404,-99], 11);
+var map = L.mapbox.map('map', 'caarloshugo.map-chfohwsn', { minZoom: 2, maxZoom:7, }).setView([15.029296875, 16.46769474828896], 2);
 
 map.dragging.disable();
 map.touchZoom.disable();
